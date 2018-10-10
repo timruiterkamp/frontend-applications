@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import Layout from '../components/page/Layout';
 class App extends Component {
 
   render() {
     return (
-      <Layout>
+      <div>
         Dit is de voor pagina
-      </Layout>
+      </div>
     );
   }
 }
