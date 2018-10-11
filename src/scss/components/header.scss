@@ -1,6 +1,25 @@
 header {
-    font-size: $heading-h1;
-    background: $headerbg;
-    color: $colorWhite;
-    padding: 15px;
+    width: 20vw;
+    height: 100vh;
+    float: left;
+    background-color: $headerbg;
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        padding: pxToRem(25);
+    }
+
+    a { 
+        color: $colorWhite;
+        font-size: pxToRem(16);
+        text-decoration: none;
+        padding: pxToRem(10) 0;
+        border-bottom: 0;
+
+        &:hover {
+            border-bottom: 1px solid $colorWhite;
+            margin-bottom: 1px;
+        }
+    }
 }

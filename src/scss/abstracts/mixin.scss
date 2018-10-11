@@ -1,11 +1,6 @@
-@function calculateRem($size) {
-    $remSize: $size / 16px;
+@function pxToRem($size) {
+    $remSize: $size / 16;
     @return #{$remSize}rem;
-}
-
-@mixin pxToRem($size) {
-    font-size: $size; //Fallback in px
-    font-size: calculateRem($size);
 }
 
 @mixin size($width, $height: $width) {

@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import {Header} from './Header'
-import {Footer} from './Footer'
+import RouterNav from '../../routes';
+import {Footer} from './Footer';
 
 class Layout extends Component {
     render() {
         return (
-            <div>
-                <Header />
+            <>
+                <RouterNav />
                     {this.props.children}
                 <Footer />
-            </div>
+            </>
         );
     }
 }

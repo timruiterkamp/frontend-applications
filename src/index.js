@@ -1,14 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './scss/index.scss';
-import AppRoutes from './routes';
 import * as serviceWorker from './serviceWorker';
 import Layout from './components/page/Layout';
 
 ReactDOM.render(
-    <Layout>
-        <AppRoutes />
-    </Layout>,
+    <Layout />,
     document.getElementById('root')
 );
 
