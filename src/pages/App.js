@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { AddUser } from "../components/client/Add";
+import AddUser from "../components/client/Add";
 import { Card } from "../components/card/Card";
 
 class App extends Component {
@@ -30,10 +30,7 @@ class App extends Component {
         return (
             <main>
                 <h2>Hey!</h2>
-                <AddUser type={"add"} userId={this.state.id} />
-                <Card 
-                title={'Niewe gebruiker'}
-                description={'dit is een hele leuke knul'}/>
+                <AddUser />
             </main>
         );
     }

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import ClientOverview from '../components/client/Overview';
 class Clients extends Component {
     constructor(props) {
         super(props);
@@ -10,6 +10,7 @@ class Clients extends Component {
         return (
             <main>
                 <h2>Hey! gebruikers</h2>
+                <ClientOverview />
             </main>
         );
     }

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import App from './pages/App';
 import Clients from './pages/Clients';
-import {Client} from './pages/Client';
+import Client from './pages/Client';
 import {NotFound} from './pages/404';
 import Header from './components/page/Header';
 
