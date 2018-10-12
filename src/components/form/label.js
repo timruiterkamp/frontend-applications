@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const LabelStyling = {
     backgroundColor: 'blue',
@@ -11,10 +11,11 @@ const Label = props => {
             type="label"
             style={LabelStyling}
             className={`label label-${props.type ? props.type : 'default'}`}
-            onClick={props.onButtonClick}>
+            onClick={props.onButtonClick}
+        >
             {props.label}
         </label>
     )
 }
 
-export default Label;
+export default Label

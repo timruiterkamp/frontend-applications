@@ -1,25 +1,25 @@
 header {
-    width: 20vw;
-    height: 100vh;
-    float: left;
-    background-image: linear-gradient($colorBlue, $colorLightBlue);
+	width: 20vw;
+	height: 100vh;
+	float: left;
+	background-image: linear-gradient($colorBlue, $colorLightBlue);
 
-    ul {
-        display: flex;
-        flex-direction: column;
-        padding: pxToRem(25);
-    }
+	ul {
+		display: flex;
+		flex-direction: column;
+		padding: pxToRem(25);
+	}
 
-    a { 
-        color: $colorWhite;
-        font-size: pxToRem(16);
-        text-decoration: none;
-        padding: pxToRem(10) 0;
-        border-bottom: 0;
+	a {
+		color: $colorWhite;
+		font-size: pxToRem(16);
+		text-decoration: none;
+		padding: pxToRem(10) 0;
+		border-bottom: 0;
 
-        &:hover {
-            border-bottom: 1px solid $colorWhite;
-            margin-bottom: 1px;
-        }
-    }
+		&:hover {
+			border-bottom: 1px solid $colorWhite;
+			margin-bottom: 1px;
+		}
+	}
 }

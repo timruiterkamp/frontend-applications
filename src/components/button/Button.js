@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const ButtonStyling = {
     backgroundColor: 'blue',
@@ -10,7 +10,8 @@ export const Button = props => (
         type="button"
         style={ButtonStyling}
         className={`btn btn-${props.type ? props.type : 'default'}`}
-        onClick={props.onButtonClick}>
+        onClick={props.onButtonClick}
+    >
         {props.label}
     </button>
-);
+)

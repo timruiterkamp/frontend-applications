@@ -1,9 +1,10 @@
-import React, { Component } from "react";
-import ClientOverview from '../components/client/Overview';
+import React, {Component} from 'react'
+import ClientOverview from '../components/client/Overview'
+
 class Clients extends Component {
     constructor(props) {
-        super(props);
-        this.id = { id: null };
+        super(props)
+        this.id = {id: null}
     }
 
     render() {
@@ -12,8 +13,8 @@ class Clients extends Component {
                 <h2>Hey! gebruikers</h2>
                 <ClientOverview />
             </main>
-        );
+        )
     }
 }
 
-export default Clients;
+export default Clients

@@ -1,7 +1,3 @@
-import React from "react";
+import React from 'react'
 
-export const Footer = props => (
-    <footer>
-        {props.children}
-    </footer>
-);
+export const Footer = props => <footer>{props.children}</footer>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 export const Card = props => (
     <article className={`card card-${props.type ? props.type : 'default'}`}>
@@ -6,4 +6,4 @@ export const Card = props => (
         <h3 className={'card-title'}>{props.title}</h3>
         <p className={'card-description'}>{props.description}</p>
     </article>
-);
+)
