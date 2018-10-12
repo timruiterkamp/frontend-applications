@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Button} from '../button/Button';
 import {Link} from 'react-router-dom';
 
 export default class ClientOverview extends Component {
@@ -26,21 +25,23 @@ export default class ClientOverview extends Component {
             return (
                 <>
                 <h2>Aantal clienten: {this.state.clients.length}</h2>
-                <article className="client">
+                <section className={'clientOverview'}>
                     {this.state.clients.map((client, index) => {
                         return (
-                            <div className="clientInfomation" key={client.id}>
-                                <Link to={`/clienten/${client.id}`}>
-                                    <h3>{client.name}</h3>
-                                </Link>
-                            </div>
+                            <article className="clientOverview__client">
+                                <div className="clientOverview__clientInfomation" key={index}>
+                                    <Link to={`/clienten/${client.id}`}>
+                                        <h3>{client.name}</h3>
+                                    </Link>
+                                </div>
+                            </article>
 
                             // TODO:
                             // add update button
                             // add question support
                         )
                     })}
-                </article>
+                </section>
                 </>
             )
         } else {

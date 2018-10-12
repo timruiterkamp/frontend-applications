@@ -2,7 +2,7 @@ header {
     width: 20vw;
     height: 100vh;
     float: left;
-    background-color: $headerbg;
+    background-image: linear-gradient($colorBlue, $colorLightBlue);
 
     ul {
         display: flex;

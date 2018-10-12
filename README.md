@@ -22,6 +22,7 @@ Other technical aspects of the app include:
 - Scss  
 - Reactive forms
 - Dynamic number input
+- Strapi CMS
 
 
 ## Installation of the project
@@ -38,15 +39,19 @@ npm run start
 > All the code is inside the src folder
 ```
 index.js - Base of the app
+routes.js - Basic routing of the app
+pages/ - All the page templates in the app  
+assets/ - static files used in the website
 scss/ - all the sass files
 scss/abstracts - Global styling config
 scss/components - Global component styling
 scss/vendor - Frameworks for flexbox
-assets/ - static files used in the website
 components/ - React components
 components/buttons - React button components
-components/form - React form components
-pages/ - All the page templates in the app
+components/form - React form components  
+components/page - Page components
+
+
 ```
 
 ## Licensing

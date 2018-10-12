@@ -18,8 +18,6 @@ export default class Header extends Component {
     }
 
     render() {
-        console.log('home',this.props);
-
         return (
             <header className="App-header">
                 <nav>

@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Button} from '../button/Button';
 
 export default class AddUser extends Component{
     constructor(props) {
@@ -7,7 +6,8 @@ export default class AddUser extends Component{
 
         this.state ={
             loading: true,
-            clients: []
+            clients: [],
+            percentage: 0
         }
     }
     
@@ -17,9 +17,7 @@ export default class AddUser extends Component{
             name: document.querySelector('#name').value,
             age: document.querySelector('#age').value
         }
-        
-        console.log(data);
-
+      
         fetch('http://localhost:1337/clients', {
             method: 'post',
             headers: {"Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
@@ -27,6 +25,7 @@ export default class AddUser extends Component{
         }).then((res) => {
             if (res.status !== 200) return;
             res.json().then((data) => console.log(data));
+            
         }).catch((err) => console.log('Fetch Error :-S', err));
     };
 
@@ -34,13 +33,12 @@ export default class AddUser extends Component{
         
         return (
             <article className={'client-add'}>
-                <input type={"text"} id={'name'} />
-                <input type={"number"} id={'age'}/>
-                <input type={'submit'} value={'submit'} onClick={this.submitInformation.bind(this)}/>
-                {/* <Button 
-                type={'add'} 
-                onButtonClick={this.submitInformation.bind(this)}
-                label={'Voeg gebruiker toe'} /> */}
+                <h3>Voeg een nieuwe case toe</h3>
+                <form>
+                    <input type={"text"} id={'name'} placeholder={'Naam'}/>
+                    <input type={"number"} id={'age'} placeholder={'Leeftijd'}/>
+                    <input type={'submit'} value={'submit'} onClick={this.submitInformation.bind(this)}/>
+                </form>
             </article>
         )
     }

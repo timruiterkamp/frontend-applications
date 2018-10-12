@@ -1,0 +1,13 @@
+article {
+
+    border: 1px solid $colorLightGrey;
+    background-color: $colorLighterGrey;
+    padding: pxToRem(25);
+
+    &.client-add {
+        width: 25vw;
+        height: pxToRem(250);
+        border-radius: pxToRem(5);
+        margin: pxToRem(15) pxToRem(5) pxToRem(5) 0;
+    }
+}
