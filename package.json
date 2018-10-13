@@ -37,6 +37,7 @@
 		"react-dev-utils": "^6.0.4",
 		"react-dom": "^16.5.2",
 		"react-router-dom": "^4.3.1",
+		"react-scripts": "2.0.4",
 		"resolve": "1.8.1",
 		"sass-loader": "7.1.0",
 		"style-loader": "0.23.0",
@@ -48,9 +49,10 @@
 		"workbox-webpack-plugin": "3.6.2"
 	},
 	"scripts": {
-		"start": "node scripts/start.js",
-		"build": "node scripts/build.js",
-		"test": "xo && node scripts/test.js"
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject"
 	},
 	"browserslist": [
 		">0.2%",
@@ -64,6 +66,12 @@
 		"singleQuote": true,
 		"semi": false,
 		"trailingComma": "none"
+	},
+	"eslintConfig": {
+		"extends": [
+			"react-app",
+			"prettier"
+		]
 	},
 	"jest": {
 		"collectCoverageFrom": [
@@ -107,9 +115,6 @@
 		]
 	},
 	"devDependencies": {
-		"eslint-loader": "^2.1.1",
-		"prettier": "^1.14.3",
-		"stylelint": "^9.5.0",
-		"stylelint-config-standard": "^18.2.0"
+		"prettier": "^1.14.3"
 	}
 }

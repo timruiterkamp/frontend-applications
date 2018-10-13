@@ -20,11 +20,13 @@ export default class Data extends Component {
 		const data = await response.json()
 		data.map(data => {
 			const { AnswerValues, questions } = data
-			let answerCategories = AnswerValues.map(cat => {
-				return cat.categorie !== undefined ? cat : null
+			let answerCategories = AnswerValues.filter(cat => {
+				return cat.categorie !== undefined ? cat.categorie : null
 			})
-			let questionCategories = questions.map(question => {
-				return question.category !== undefined ? question : null
+			let questionCategories = questions.filter(question => {
+				return question.category !== undefined
+					? question.category
+					: null
 			})
 			let completeQuestion = [...answerCategories, ...questionCategories]
 			// todo connect cats
