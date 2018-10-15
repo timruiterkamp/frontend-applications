@@ -1,8 +1,13 @@
 import React, { Component } from 'react'
 import AddUser from '../components/client/Add'
 import { Link } from 'react-router-dom'
+// import { PrivateRoute } from '../components/PrivateRoute'
 
 class App extends Component {
+	componentDidMount() {
+		document.title = 'Kind veilig thuis'
+	}
+
 	render() {
 		return (
 			<main>

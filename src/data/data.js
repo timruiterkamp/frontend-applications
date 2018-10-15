@@ -21,13 +21,13 @@ export default class Data extends Component {
 
 		data.map(data => {
 			const { AnswerValues, questions } = data
-			let completeQuestion = [...AnswerValues, ...questions]
-			// let answerCategories = AnswerValues.map(cat => {
-			// 	return cat.categorie !== undefined ? cat : null
-			// })
-			// let questionCategories = questions.map(question => {
-			// 	return question.category !== undefined ? question : null
-			// })
+			let answerCategories = AnswerValues.map(cat => {
+				return cat.categorie !== undefined ? cat : null
+			})
+			let questionCategories = questions.map(question => {
+				return question.categorie !== undefined ? question : null
+			})
+			let completeQuestion = [...answerCategories, ...questionCategories]
 			// todo connect cats
 			return completeQuestion
 		})
