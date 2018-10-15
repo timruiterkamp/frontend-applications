@@ -18,20 +18,30 @@ export default class Data extends Component {
 			return
 		}
 		const data = await response.json()
+
 		data.map(data => {
 			const { AnswerValues, questions } = data
-			let answerCategories = AnswerValues.filter(cat => {
-				return cat.categorie !== undefined ? cat.categorie : null
-			})
-			let questionCategories = questions.filter(question => {
-				return question.category !== undefined
-					? question.category
-					: null
-			})
-			let completeQuestion = [...answerCategories, ...questionCategories]
+			let completeQuestion = [...AnswerValues, ...questions]
+			// let answerCategories = AnswerValues.map(cat => {
+			// 	return cat.categorie !== undefined ? cat : null
+			// })
+			// let questionCategories = questions.map(question => {
+			// 	return question.category !== undefined ? question : null
+			// })
 			// todo connect cats
-			console.log(completeQuestion)
+			return completeQuestion
 		})
+
+		// .filter(data => {
+		// 	data.map(items => {
+		// 		const newData = []
+		// 		items.categorie == items.category
+		// 			? newData.push(items)
+		// 			: console.log('helaas', items)
+
+		// 		console.log(newData)
+		// 	})
+		// })
 
 		this.setState({ loading: false, data })
 	}

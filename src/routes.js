@@ -3,6 +3,9 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import App from './pages/App'
 import Clients from './pages/Clients'
 import Client from './pages/Client'
+import Trajectkeuze from './pages/Trajectkeuze'
+import Over from './pages/Over'
+import Contact from './pages/Contact'
 import { NotFound } from './pages/404'
 import Header from './components/page/Header'
 
@@ -24,13 +27,34 @@ export default class RouterNav extends Component {
 		},
 		{
 			id: 3,
+			name: 'Over',
+			path: '/over',
+			file: Over,
+			show: true
+		},
+		{
+			id: 4,
+			name: 'Trajectkeuze',
+			path: '/trajectkeuze',
+			file: Trajectkeuze,
+			show: true
+		},
+		{
+			id: 5,
+			name: 'Contact',
+			path: '/contact',
+			file: Contact,
+			show: true
+		},
+		{
+			id: 6,
 			name: 'Client',
 			path: '/clienten/:id',
 			file: Client,
 			show: false
 		},
 		{
-			id: 4,
+			id: 7,
 			name: 'NotFound',
 			path: '*',
 			file: NotFound,
@@ -41,7 +65,7 @@ export default class RouterNav extends Component {
 	render() {
 		return (
 			<BrowserRouter>
-				<>
+				<React.Fragment>
 					<Header
 						link={this.data.filter(page => {
 							return page.show === true
@@ -57,7 +81,7 @@ export default class RouterNav extends Component {
 							/>
 						))}
 					</Switch>
-				</>
+				</React.Fragment>
 			</BrowserRouter>
 		)
 	}
