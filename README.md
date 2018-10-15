@@ -49,13 +49,24 @@ The things I'm aiming for with this app are:
 -   Friday
     -   Started the day with implementing some style changes and some code refactoring.
     -   Helped students with setting up stores in ChooJS.
-    -   Got a sort of feedback talk with the teachers and the confirmed I was heading the right way.
+    -   Got a short feedback talk with the teachers and they confirmed I was heading the right way.
+    -   Setup questions and answers in the API.
+    -   Started filtering the questions and answers
+
+---
 
 ### Week 2
 
 -   Monday
-    Margrit de Groot
+
+    -   On monday Margrit de Groot gave us insight in the world of social workers and how they processed client information and what kind of influences / factors could result in possible removal of residence. During this talk I got some new ideas based on the problems Margrit faced. Most of the ideas were for the building of the client case.
+
+    -   On this day I started building on the form and protected routes.
+    -   Decided to made the cases slightly anonymous by hiding the full name, create a short version of it and a document number.
+    -   Differientate static and dynamic questions.
+
     ***
+
 -   Tuesday
     ***
 -   Wednesday
@@ -63,6 +74,8 @@ The things I'm aiming for with this app are:
 -   Thursday
     ***
 -   Friday
+
+---
 
 ## Development
 
