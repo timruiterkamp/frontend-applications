@@ -15,6 +15,8 @@ The things I'm aiming for with this app are:
 -   Dynamic input of risk numbers
 -   Helpful forms that use scenario descriptions to get better understanding of the question
 -   Setting up mutiple cases and keep record of the progress
+-   Stimulate the speed of the process
+-   Keeping track of the case
 
 ## Overview process
 
@@ -50,6 +52,17 @@ The things I'm aiming for with this app are:
     -   Got a sort of feedback talk with the teachers and the confirmed I was heading the right way.
 
 ### Week 2
+
+-   Monday
+    Margrit de Groot
+    ***
+-   Tuesday
+    ***
+-   Wednesday
+    ***
+-   Thursday
+    ***
+-   Friday
 
 ## Development
 
