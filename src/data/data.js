@@ -21,27 +21,29 @@ export default class Data extends Component {
 
 		data.map(data => {
 			const { AnswerValues, questions } = data
-			let answerCategories = AnswerValues.map(cat => {
-				return cat.categorie !== undefined ? cat : null
-			})
-			let questionCategories = questions.map(question => {
-				return question.categorie !== undefined ? question : null
-			})
-			let completeQuestion = [...answerCategories, ...questionCategories]
-			// todo connect cats
-			return completeQuestion
+			let completeQuestion = [...AnswerValues, ...questions]
+			const result = [
+				...completeQuestion
+					.reduce((item, { categorie, ...content }) => {
+						item.has(categorie) ||
+							item.set(categorie, {
+								categorie,
+								items: []
+							})
+
+						item.get(categorie).items.push({
+							...content,
+							categorie
+						})
+
+						return item
+					}, new Map())
+					.values()
+			]
+
+			console.log(result)
+			return result
 		})
-
-		// .filter(data => {
-		// 	data.map(items => {
-		// 		const newData = []
-		// 		items.categorie == items.category
-		// 			? newData.push(items)
-		// 			: console.log('helaas', items)
-
-		// 		console.log(newData)
-		// 	})
-		// })
 
 		this.setState({ loading: false, data })
 	}

@@ -1,6 +1,7 @@
 header {
 	width: 20vw;
-	height: 100vh;
+	min-height: 100vh;
+	height: 100%;
 	float: left;
 	background-image: linear-gradient($colorBlue, $colorLightBlue);
 

@@ -38,6 +38,6 @@ export default class Client extends Component {
 			)
 		}
 
-		return <h2>Waiting for API...</h2>
+		return <h2>Loading...</h2>
 	}
 }
