@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
-
+import Input from '../components/form/Input'
 export default class Data extends Component {
 	constructor(props) {
 		super(props)
 
 		this.state = {
 			loading: true,
-			questions: [],
-			answers: []
+			data: []
 		}
 	}
 
@@ -19,18 +18,21 @@ export default class Data extends Component {
 		}
 		const data = await response.json()
 
-		data.map(data => {
+		const filteredItems = data.map(data => {
 			const { AnswerValues, questions } = data
 			let completeQuestion = [...AnswerValues, ...questions]
 			const result = [
+				// create new array with objects
 				...completeQuestion
 					.reduce((item, { categorie, ...content }) => {
+						// if the item category doesn't exist, add it
 						item.has(categorie) ||
 							item.set(categorie, {
 								categorie,
 								items: []
 							})
 
+						// if the item category exists, add the item to the items array
 						item.get(categorie).items.push({
 							...content,
 							categorie
@@ -40,15 +42,13 @@ export default class Data extends Component {
 					}, new Map())
 					.values()
 			]
-
-			console.log(result)
 			return result
 		})
 
-		this.setState({ loading: false, data })
+		this.setState({ loading: false, data: filteredItems })
 	}
 
 	render() {
-		return <div />
+		return <Input data={this.state.data} />
 	}
 }

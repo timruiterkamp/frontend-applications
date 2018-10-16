@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import Data from '../data/data'
+import Input from '../components/form/Input'
+import Questions from '../data/data'
 export default class Client extends Component {
 	constructor(props) {
 		super(props)
@@ -33,7 +34,8 @@ export default class Client extends Component {
 					<div className="client__description">
 						{this.state.client.description}
 					</div>
-					<Data />
+					<Questions />
+					<Input />
 				</div>
 			)
 		}
