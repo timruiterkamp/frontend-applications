@@ -1,45 +1,22 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { getSingleClientByID } from '../store/actions/FormActions'
+import { connect } from 'react-redux'
 import Input from '../components/form/Input'
 import Questions from '../data/data'
-export default class Client extends Component {
-	constructor(props) {
-		super(props)
 
-		this.state = {
-			loading: true,
-			client: {}
-		}
-	}
-
-	async componentDidMount() {
-		const response = await fetch(
-			`http://localhost:1337/clients/${this.props.match.params.id}`
-		)
-		const data = await response.json()
-		this.setState({
-			loading: false,
-			client: data
-		})
-	}
-
-	render() {
-		if (!this.state.loading) {
-			return (
-				<div className="client">
-					<div className="client__information">
-						<h2 className="client-title">
-							{this.state.client.name}
-						</h2>
-					</div>
-					<div className="client__description">
-						{this.state.client.description}
-					</div>
-					<Questions />
-					<Input />
-				</div>
-			)
-		}
-
-		return <h2>Loading...</h2>
-	}
+const Client = props => {
+	const { id } = props.match.params
+	const client = props.getSingleClientByID(id)
+	console.log(client)
+	return <div>{client.name}</div>
 }
+
+// Actions to connect to app component
+const actions = {
+	getSingleClientByID
+}
+
+export default connect(
+	null,
+	actions
+)(Client)

@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
 import AddUser from '../components/client/Add'
 import { Link } from 'react-router-dom'
+import { toggleStoreValue } from '../store/actions/FormActions'
+import { connect } from 'react-redux'
 // import { PrivateRoute } from '../components/PrivateRoute'
 
 class App extends Component {
 	componentDidMount() {
 		document.title = 'Kind veilig thuis'
+		console.log(this.props)
 	}
 
 	render() {
@@ -26,4 +29,17 @@ class App extends Component {
 	}
 }
 
-export default App
+// Set app store as prop of app component
+const mapStateToProps = state => ({
+	storeData: state
+})
+
+// Actions to connect to app component
+const actions = {
+	toggleStoreValue
+}
+
+export default connect(
+	mapStateToProps,
+	actions
+)(App)
