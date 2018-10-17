@@ -1,7 +1,7 @@
 import {
 	TOGGLE_STORE_VALUE,
 	STORE_CLIENT_DATA
-} from '../../actions/FormActions'
+} from '../../actions/ClientActions'
 
 const initialState = {
 	storeValue: false,

@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { formDataReducer } from './data/formDataReducer'
+import { formDataReducer } from './data/clientDataReducer'
 import { UIReducer } from './UI/UIReducer'
 
 // Combine all reducers

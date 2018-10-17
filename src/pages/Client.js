@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { getSingleClientByID } from '../store/actions/FormActions'
+import { getSingleClientByID } from '../store/actions/ClientActions'
 import { connect } from 'react-redux'
+import { Profile } from '../components/client/profile'
 
 class Client extends Component {
 	constructor(props) {
@@ -22,7 +23,10 @@ class Client extends Component {
 		return (
 			<>
 				{this.state.client ? (
-					<h2>Client: {this.state.client.name}</h2>
+					<Profile
+						name={this.state.client.name}
+						age={this.state.client.age}
+					/>
 				) : (
 					<h2>Loading</h2>
 				)}

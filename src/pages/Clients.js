@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ClientOverview from '../components/client/Overview'
-import { getClients } from '../store/actions/FormActions'
+import { getClients } from '../store/actions/ClientActions'
 import { connect } from 'react-redux'
 
 class Clients extends Component {
