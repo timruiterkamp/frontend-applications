@@ -1,26 +1,75 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class Input extends Component {
-	constructor(props) {
-		super(props)
-		this.state = { data: null, loading: true }
-	}
+const Input = props => {
+	const { data } = props
 
-	static getDerivedStateFromProps(nextProps, prevState) {
-		// check if data isn't the same as previous
-		if (nextProps.data !== prevState.data) {
-			return {
-				data: nextProps.data,
-				loading: false
-			}
+	const saveChoices = e => {
+		const gewicht = e.target.value
+		const answer = e.target
+			.querySelector(':checked')
+			.getAttribute('data-answer')
+		const category = e.target
+			.querySelector(':checked')
+			.getAttribute('data-cat')
+		const selectedChoices = {
+			answer: answer,
+			category: category,
+			gewicht: gewicht
 		}
-		// No state update necessary
-		return null
+
+		// bouw dit om naar een store
+		localStorage.setItem(category, JSON.stringify(selectedChoices))
 	}
 
-	render() {
-		return <h2>{console.log(this.state.data)}</h2>
-	}
+	return (
+		<>
+			{data ? (
+				<>
+					{Object.values(data).map(object =>
+						object.map((category, index) => (
+							<>
+								<h2>{category.categorie}</h2>
+								<select key={index} onChange={saveChoices}>
+									{category.items.map((item, index) => (
+										<>
+											{localStorage.getItem(
+												item.categorie
+											) && (
+												<option>
+													{
+														JSON.parse(
+															localStorage.getItem(
+																item.categorie
+															)
+														).answer
+													}
+												</option>
+											)}
+											<option
+												key={index}
+												value={
+													item.gewicht || item.Gewicht
+												}
+												data-answer={item.Name}
+												data-cat={item.categorie}
+											>
+												{item.Name || item.name}
+											</option>
+										</>
+									))}
+									<option value={0} data-answer="onbekend">
+										Niet bekend
+									</option>
+								</select>
+							</>
+						))
+					)}
+				</>
+			) : (
+				<h2>Loading</h2>
+			)}
+		</>
+	)
 }
 
 export default Input

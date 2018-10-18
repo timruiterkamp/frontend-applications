@@ -8,7 +8,7 @@ const initialState = {
 	clients: []
 }
 
-export const formDataReducer = (state = initialState, action) => {
+export const clientDataReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case TOGGLE_STORE_VALUE:
 			return {

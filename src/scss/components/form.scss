@@ -1,20 +1,26 @@
 form {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 
-    input {
-        border: 1px solid $colorLightGrey;
-        border-radius: pxToRem(5);
-        padding: pxToRem(10) pxToRem(15);
-        margin: pxToRem(5) 0;
+	input {
+		border: 1px solid $colorLightGrey;
+		border-radius: pxToRem(5);
+		padding: pxToRem(10) pxToRem(15);
+		margin: pxToRem(5) 0;
 
-        &:first-of-type {
-            margin-top: pxToRem(25);
-        }
+		&:first-of-type {
+			margin-top: pxToRem(25);
+		}
 
-        &[type="submit"] {
-            background-color: $colorDarkGreen;
-            color: $colorWhite;
-        }
-    }
+		&[type='submit'] {
+			background-color: $colorDarkGreen;
+			color: $colorWhite;
+		}
+	}
+}
+
+option {
+	&:empty {
+		display: none;
+	}
 }

@@ -20,7 +20,7 @@ class Clients extends Component {
 
 // Set app store as prop of app component
 const mapStateToProps = state => ({
-	clientData: state.formData.clients
+	clientData: state.clientData.clients
 })
 
 // Actions to connect to app component
