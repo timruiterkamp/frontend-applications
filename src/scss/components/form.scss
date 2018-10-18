@@ -1,6 +1,7 @@
 form {
 	display: flex;
 	flex-direction: column;
+	padding: 0 25px;
 
 	input {
 		border: 1px solid $colorLightGrey;
@@ -19,8 +20,25 @@ form {
 	}
 }
 
-option {
-	&:empty {
-		display: none;
+select {
+	position: relative;
+	overflow: hidden;
+	border: 1px solid $colorLightGrey;
+	border-radius: 0;
+	height: 35px;
+	min-width: 250px;
+
+	option {
+		padding: 10px 15px;
+	}
+}
+
+fieldset {
+	display: flex;
+	padding: 10px 0;
+	border: 0;
+
+	label {
+		padding: 10px 0;
 	}
 }

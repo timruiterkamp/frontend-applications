@@ -89,16 +89,18 @@ export default class RouterNav extends Component {
 							)
 						})}
 					/>
-					<Switch>
-						{this.data.map(page => (
-							<Route
-								key={page.id}
-								exact
-								path={page.path}
-								component={page.file}
-							/>
-						))}
-					</Switch>
+					<main>
+						<Switch>
+							{this.data.map(page => (
+								<Route
+									key={page.id}
+									exact
+									path={page.path}
+									component={page.file}
+								/>
+							))}
+						</Switch>
+					</main>
 				</React.Fragment>
 			</BrowserRouter>
 		)

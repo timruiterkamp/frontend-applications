@@ -1,17 +1,16 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import RouterNav from '../../routes'
-import {Footer} from './Footer'
+import { Footer } from './Footer'
 
 class Layout extends Component {
-    render() {
-        return (
-            <>
-                <RouterNav />
-                {this.props.children}
-                <Footer />
-            </>
-        )
-    }
+	render() {
+		return (
+			<>
+				<RouterNav />
+				<Footer />
+			</>
+		)
+	}
 }
 
 export default Layout

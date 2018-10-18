@@ -23,7 +23,11 @@ class Form extends Component {
 	}
 
 	render() {
-		return <Input data={this.state.formData} />
+		return (
+			<form>
+				<Input data={this.state.formData} />
+			</form>
+		)
 	}
 }
 
