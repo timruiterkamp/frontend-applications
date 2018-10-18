@@ -26,7 +26,7 @@ export default class RouterNav extends Component {
 			path: '/clienten',
 			file: Clients,
 			show: true,
-			protected: true
+			protected: false
 		},
 		{
 			id: 3,

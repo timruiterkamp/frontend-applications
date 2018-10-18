@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 const ClientOverview = props => {
 	const { clients } = props
-	console.log(props)
 	return (
 		<>
 			{clients ? (

@@ -23,21 +23,22 @@ function filterData(data) {
 	const filteredData = data.map(data => {
 		const { AnswerValues, questions } = data
 		let completeQuestion = [...AnswerValues, ...questions]
-
 		const result = [
 			// create new array with objects existing of category with items with same category
 			...completeQuestion
-				.reduce((item, { categorie, ...content }) => {
+				.reduce((item, { globalCategorie, categorie, ...content }) => {
 					// if the item category doesn't exist, add it
 					item.has(categorie.toLowerCase()) ||
 						item.set(categorie.toLowerCase(), {
 							categorie,
+							globalCategorie,
 							items: []
 						})
 
 					// if the item category exists, add the item to the items array
 					item.get(categorie.toLowerCase()).items.push({
 						...content,
+						globalCategorie,
 						categorie
 					})
 

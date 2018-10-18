@@ -30,6 +30,10 @@ select {
 
 	option {
 		padding: 10px 15px;
+
+		&:empty {
+			display: none;
+		}
 	}
 }
 

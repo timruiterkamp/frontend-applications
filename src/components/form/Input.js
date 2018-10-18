@@ -13,7 +13,7 @@ class Input extends Component {
 			const gewicht = e.target.value
 			const answer = e.target
 				.querySelector(':checked')
-				.getAttribute('data-answer')
+				.getAttribute('data-answer-one')
 			const category = e.target
 				.querySelector(':checked')
 				.getAttribute('data-cat')
@@ -32,56 +32,67 @@ class Input extends Component {
 				{this.props.data ? (
 					<>
 						{Object.values(this.props.data).map(object =>
-							object.map((category, index) => (
-								<fieldset key={index}>
-									<label key={index}>
-										{category.categorie}
-									</label>
-									<select
-										ref={this.selectRef}
-										onChange={saveChoices}
-									>
-										<option disabled selected hidden value>
-											{' '}
-											-- select an option --{' '}
-										</option>
-										{category.items.map((item, index) => (
-											<Fragment key={index}>
-												{localStorage.getItem(
-													item.categorie
-												) && (
-													<option key={item + index}>
-														{
-															JSON.parse(
-																localStorage.getItem(
-																	item.categorie
-																)
-															).answer
-														}
-													</option>
-												)}
-												<option
-													key={index}
-													value={
-														item.gewicht ||
-														item.Gewicht
-													}
-													data-answer={item.Name}
-													data-cat={item.categorie}
-												>
-													{item.Name || item.name}
-												</option>
-											</Fragment>
-										))}
-										<option
-											value={0}
-											data-answer="onbekend"
+							object.map((category, index) => {
+								return (
+									<fieldset key={index}>
+										<label>{category.categorie}</label>
+										<select
+											ref={this.selectRef}
+											onChange={saveChoices}
 										>
-											Niet bekend
-										</option>
-									</select>
-								</fieldset>
-							))
+											<option disabled selected>
+												{' '}
+												-- select an option --{' '}
+											</option>
+											{category.items.map(
+												(item, index) => (
+													<Fragment key={index}>
+														{localStorage.getItem(
+															item.categorie
+														) && (
+															<option
+																key={
+																	item + index
+																}
+															>
+																{
+																	JSON.parse(
+																		localStorage.getItem(
+																			item.categorie
+																		)
+																	).answer
+																}
+															</option>
+														)}
+														<option
+															key={index}
+															value={
+																item.gewicht ||
+																item.Gewicht
+															}
+															data-answer={
+																item.Name
+															}
+															data-cat={
+																item.categorie
+															}
+														>
+															{item.Name ||
+																item.name}
+														</option>
+													</Fragment>
+												)
+											)}
+											<option
+												value={0}
+												data-answer="onbekend"
+											>
+												Niet bekend
+											</option>
+										</select>
+									</fieldset>
+								)
+							})
 						)}
 					</>
 				) : (
