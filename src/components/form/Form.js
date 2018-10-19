@@ -22,21 +22,24 @@ class Form extends Component {
 
 	render() {
 		const { formData } = this.state
-		// const globalCategories =
+		// function powered by @wooorm and @denniswegereef
+		// const uniqueCategories = [
 		// 	formData &&
-		// 	formData.map(question =>
-		// 		question.filter(
-		// 			(item, index, all) => all.indexOf('Algemeen') == index
+		// 		formData.map(category =>
+		// 			category
+		// 				.map(item => item.globalCategorie)
+		// 				.filter(
+		// 					(globalCategorie, index, all) =>
+		// 						all.indexOf(globalCategorie) == index
+		// 				)
 		// 		)
-		// 	)
+		// ]
+		// console.log(uniqueCategories)
 
-		// console.log(globalCategories)
 		const selectInputs =
 			formData &&
 			formData.map(item =>
-				item
-					.filter(item => item.globalCategorie === 'Algemeen')
-					.map(item => <Select key={item.categorie} options={item} />)
+				item.map(item => <Select key={item.categorie} options={item} />)
 			)
 
 		return <form>{selectInputs}</form>

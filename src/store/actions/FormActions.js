@@ -1,4 +1,5 @@
 export const STORE_FORM_DATA = 'STORE_FORM_DATA'
+export const STORE_PERCENTAGE_DATA = 'STORE_PERCENTAGE_DATA'
 
 // Dispatch functions
 function storeFormData(data) {
@@ -7,8 +8,21 @@ function storeFormData(data) {
 		value: data
 	}
 }
+function storePercentage(data) {
+	return {
+		type: STORE_PERCENTAGE_DATA,
+		value: data
+	}
+}
 
 // Actions
+
+export function storePercentageData(data) {
+	return dispatch => {
+		dispatch(storePercentage(data))
+	}
+}
+
 export function getFormData() {
 	return async dispatch => {
 		const data = await fetch('http://localhost:1337/questions')

@@ -3,6 +3,7 @@ import { getSingleClientByID } from '../store/actions/ClientActions'
 import { connect } from 'react-redux'
 import { Profile } from '../components/client/profile'
 import Form from '../components/form/Form'
+import Calculation from '../components/calculator/Calculator'
 
 class Client extends Component {
 	constructor(props) {
@@ -29,6 +30,7 @@ class Client extends Component {
 							name={this.state.client.name}
 							age={this.state.client.age}
 						/>
+						<Calculation />
 						<Form />
 					</>
 				) : (

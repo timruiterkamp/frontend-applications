@@ -28,6 +28,10 @@ select {
 	height: 35px;
 	min-width: 250px;
 
+	&option[value]:empty {
+		display: none;
+	}
+
 	option {
 		padding: 10px 15px;
 
@@ -39,8 +43,33 @@ select {
 
 fieldset {
 	display: flex;
+	flex-direction: column;
 	padding: 10px 0;
 	border: 0;
+
+	&.Algemeen {
+		order: 0;
+	}
+
+	&.Typehuishouden {
+		order: 1;
+	}
+
+	&.Werkopleiding {
+		order: 2;
+	}
+
+	&.Justitie {
+		order: 3;
+	}
+
+	&.Huisvesting {
+		order: 4;
+	}
+
+	&.Huiselijkerelaties {
+		order: 5;
+	}
 
 	label {
 		padding: 10px 0;
