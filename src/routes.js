@@ -84,6 +84,7 @@ export default class RouterNav extends Component {
 						<Switch>
 							{this.data.map(page => (
 								<Route
+									activeClassName="nav-active"
 									key={page.id}
 									exact
 									path={page.path}

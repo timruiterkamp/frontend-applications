@@ -18,6 +18,13 @@ export const Profile = props => (
 		</section>
 		<section className={'profile-calc'}>
 			<h3>{props.calc}</h3>
+			<div className={'calc-info'}>
+				<ul>
+					<li>0 - 2%: Laag risico</li>
+					<li>2 - 5%: Middelmatig risico</li>
+					<li>5% en hoger: Hoog risico</li>
+				</ul>
+			</div>
 		</section>
 	</article>
 )

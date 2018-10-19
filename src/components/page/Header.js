@@ -16,7 +16,12 @@ export default class Header extends Component {
 				<nav>
 					<ul>
 						{this.props.link.map(page => (
-							<NavLink to={page.path} key={page.id}>
+							<NavLink
+								exact
+								activeClassName="nav-active"
+								to={page.path}
+								key={page.id}
+							>
 								{page.name}
 							</NavLink>
 							// <NavLink to={page.path} key={page.id} onClick={this.toggleActive.bind(this)} className={`navItem navItem-${this.state.active ? 'active' : 'default'}`}>{page.name}</NavLink>

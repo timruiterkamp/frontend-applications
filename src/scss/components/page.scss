@@ -1,5 +1,9 @@
 main {
 	padding: pxToRem(20) 0 0 22vw;
+
+	h2 {
+		padding-bottom: pxToRem(15);
+	}
 }
 
 .introduction-menu {

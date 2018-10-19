@@ -3,7 +3,7 @@ header {
 	min-height: 100vh;
 	height: 100%;
 	float: left;
-	background-image: linear-gradient($colorBlue, $colorLightBlue);
+	background-image: linear-gradient(to top, #56ccf2, #2f80ed);
 	position: fixed;
 
 	ul {
@@ -19,7 +19,8 @@ header {
 		padding: pxToRem(10) 0;
 		border-bottom: 0;
 
-		&:hover {
+		&:hover,
+		&.nav-active {
 			border-bottom: 1px solid $colorWhite;
 			margin-bottom: 1px;
 		}

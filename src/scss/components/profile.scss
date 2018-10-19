@@ -23,7 +23,32 @@
 
 		position: fixed;
 		top: 75px;
-		right: 10vw;
+		right: 7vw;
+
+		background-color: $colorWhite;
+		flex-direction: column;
+
+		ul {
+			list-style-type: none;
+			border: 1px solid $colorLightGrey;
+			border-radius: pxToRem(5);
+			padding: pxToRem(25);
+			width: pxToRem(250);
+			height: 100%;
+			margin-top: pxToRem(15);
+
+			li {
+				padding: pxToRem(5) 0;
+
+				&:first-child {
+					color: green;
+				}
+
+				&:last-child {
+					color: red;
+				}
+			}
+		}
 
 		h3 {
 			border: 1px solid $colorLightGrey;
