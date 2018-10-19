@@ -6,7 +6,7 @@ const ClientOverview = props => {
 	return (
 		<>
 			{clients ? (
-				<h2>Aantal clienten: {clients.length}</h2>
+				<h2>Aantal cases: {clients.length}</h2>
 			) : (
 				<h2>Loading</h2>
 			)}
@@ -18,11 +18,21 @@ const ClientOverview = props => {
 								className="clientOverview__client"
 								key={index}
 							>
-								<div className="clientOverview__clientInfomation">
-									<Link to={`/clienten/${client.id}`}>
-										<h3>{client.name}</h3>
-									</Link>
-								</div>
+								<h3>{client.name}</h3>
+								<p>
+									<strong>Leeftijd:</strong> {client.age}
+								</p>
+								{client.korte_omschrijving ? (
+									<p>
+										<strong>Omschrijving:</strong>
+										{client.korte_omschrijving}
+									</p>
+								) : (
+									''
+								)}
+								<Link to={`/clienten/${client.id}`}>
+									Bekijk profiel
+								</Link>
 							</article>
 							// TODO:
 							// add update button

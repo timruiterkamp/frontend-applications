@@ -1,13 +1,58 @@
 article {
+	border: 1px solid $colorLightGrey;
+	padding: pxToRem(25);
 
-    border: 1px solid $colorLightGrey;
-    background-color: $colorLighterGrey;
-    padding: pxToRem(25);
+	&.client-add,
+	&.card-overview {
+		width: 25vw;
+		height: 100%;
+		border-radius: pxToRem(5);
+		margin: pxToRem(15) pxToRem(5) pxToRem(5) 0;
+		text-align: center;
 
-    &.client-add {
-        width: 25vw;
-        height: pxToRem(250);
-        border-radius: pxToRem(5);
-        margin: pxToRem(15) pxToRem(5) pxToRem(5) 0;
-    }
+		a {
+			border-radius: 0.3125rem;
+			text-align: center;
+			padding: pxToRem(10) pxToRem(0);
+			background-color: $colorDarkGreen;
+			color: $colorWhite;
+			text-decoration: none;
+			display: flex;
+			flex-direction: column;
+			margin-top: 45px;
+		}
+	}
+
+	&.card-overview {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	&.clientOverview {
+		&__client {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+
+			h3 {
+				text-transform: capitalize;
+				align-self: flex-start;
+			}
+
+			a {
+				align-self: flex-start;
+				text-decoration: none;
+				border-radius: 0.3125rem;
+				text-align: center;
+				padding: pxToRem(10) pxToRem(15);
+				background-color: $colorDarkGreen;
+				color: $colorWhite;
+				text-decoration: none;
+				display: flex;
+				flex-direction: column;
+				margin-top: 45px;
+			}
+		}
+	}
 }

@@ -1,3 +1,10 @@
 main {
-    padding: pxToRem(20) 0 0 22vw ;
+	padding: pxToRem(20) 0 0 22vw;
+}
+
+.introduction-menu {
+	display: grid;
+	grid-template-columns: repeat(2, 27vw);
+	grid-gap: 10px;
+	grid-auto-rows: minmax(100px, auto);
 }

@@ -40,7 +40,7 @@ const Select = props => {
 						defaultValue={'-- select an option --'}
 					>
 						{localStorage.getItem(props.options.categorie) ? (
-							<option>
+							<option disabled>
 								{
 									JSON.parse(
 										localStorage.getItem(

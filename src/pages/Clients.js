@@ -10,10 +10,10 @@ class Clients extends Component {
 
 	render() {
 		return (
-			<main>
-				<h2>Hey! gebruikers</h2>
+			<section>
+				<h2>Overzicht van alle cases</h2>
 				<ClientOverview clients={this.props.clientData} />
-			</main>
+			</section>
 		)
 	}
 }

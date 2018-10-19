@@ -4,6 +4,7 @@ header {
 	height: 100%;
 	float: left;
 	background-image: linear-gradient($colorBlue, $colorLightBlue);
+	position: fixed;
 
 	ul {
 		display: flex;

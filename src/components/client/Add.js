@@ -16,7 +16,8 @@ export default class AddUser extends Component {
 		e.preventDefault()
 		const data = {
 			name: document.querySelector('#name').value,
-			age: document.querySelector('#age').value
+			age: document.querySelector('#age').value,
+			omschrijving: document.querySelector('#omschrijving').value
 		}
 
 		fetch('http://localhost:1337/clients', {
@@ -25,7 +26,9 @@ export default class AddUser extends Component {
 				'Content-type':
 					'application/x-www-form-urlencoded; charset=UTF-8'
 			},
-			body: `name=${data.name}&age=${data.age}`
+			body: `name=${data.name}&age=${data.age}&korte_omschrijving=${
+				data.omschrijving
+			}`
 		})
 			.then(res => {
 				if (res.status !== 200) return
@@ -49,6 +52,11 @@ export default class AddUser extends Component {
 						type={'number'}
 						id={'age'}
 						placeholder={'Leeftijd'}
+					/>
+					<textarea
+						type={'text'}
+						id={'omschrijving'}
+						placeholder={'Korte omschrijving'}
 					/>
 					<input
 						type={'submit'}

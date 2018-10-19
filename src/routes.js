@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import App from './pages/App'
 import Clients from './pages/Clients'
 import Client from './pages/Client'
-import Trajectkeuze from './pages/Trajectkeuze'
 import Over from './pages/Over'
 import Contact from './pages/Contact'
 import { NotFound } from './pages/404'
@@ -38,14 +37,6 @@ export default class RouterNav extends Component {
 		},
 		{
 			id: 4,
-			name: 'Trajectkeuze',
-			path: '/trajectkeuze',
-			file: Trajectkeuze,
-			show: true,
-			protected: false
-		},
-		{
-			id: 5,
 			name: 'Contact',
 			path: '/contact',
 			file: Contact,
@@ -53,7 +44,7 @@ export default class RouterNav extends Component {
 			protected: false
 		},
 		{
-			id: 6,
+			id: 5,
 			name: 'Client',
 			path: '/clienten/:id',
 			file: Client,
@@ -61,7 +52,7 @@ export default class RouterNav extends Component {
 			protected: false
 		},
 		{
-			id: 7,
+			id: 6,
 			name: 'Login',
 			path: '/login',
 			file: Login,
@@ -69,7 +60,7 @@ export default class RouterNav extends Component {
 			protected: false
 		},
 		{
-			id: 8,
+			id: 7,
 			name: 'NotFound',
 			path: '*',
 			file: NotFound,

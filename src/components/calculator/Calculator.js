@@ -7,8 +7,6 @@ class Calculator extends Component {
 	}
 
 	render() {
-		// let getValuesOutOfLocalStorage = localStorage.getItem(props.options)
-		console.log(this.props)
 		let calculateValues = this.props.formData
 			.map(item => item.gewicht)
 			.reduce((a, b) => a + b, 0)
@@ -16,7 +14,6 @@ class Calculator extends Component {
 		const formulate = Number(
 			(1 / (1 + Math.exp(-1 * (-8.57219 + calculateValues)))) * 100 * 10
 		)
-		console.log(formulate)
 
 		return <div>{`${formulate.toFixed(2)}%`}</div>
 	}
