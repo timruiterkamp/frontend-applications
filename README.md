@@ -6,7 +6,8 @@ the main point is helping social workers with decision making when it comes to t
 
 ## The main purpose
 
-the main purpose of this app is helping the social worker with better risk calculations, case overview and getting reliable answers from their client to provide them with good support.
+the main purpose of this app is helping the social worker with better risk calculations, case overview and getting reliable answers from their client to provide them with good support.  
+During the talks that we've got in the past two weeks it became clear that there are a lot of places and working methods for case handling like paper work. In my opinion this should be all in one place and easy to edit and create.
 
 The things I'm aiming for with this app are:
 
@@ -16,7 +17,19 @@ The things I'm aiming for with this app are:
 -   Helpful forms that use scenario descriptions to get better understanding of the question
 -   Setting up mutiple cases and keep record of the progress
 -   Stimulate the speed of the process
--   Keeping track of the case
+-   Keeping track of the case for social workers
+
+## Learning process
+
+I chose the framework React as it has my main interest due to the fact I have been creating websites and applications with Vue for the last months, and my interest in React started to grow as it seemd to be more specific and less 'magic' in comparison to Vue. In my opinion React has been a more fun way of developing than Vue is, you have to be more specific and think of a component based setup that can be re-used in the future.
+
+The way React works with it's components makes you spending more time on creating the right setup. The only thing I reconized was that in the middle of my project I started with Redux and this changes the whole setup of the app. This is also a thing that has to be refactored in the future. The current setup can be way more explanatory if the components were even better named and placed.
+
+As within a couple of days I learned more about React and started to connect Strapi as an Api CMS for my application. To make my concept stronger and make things a bit more difficult. During this progress I learned more about data modelling and talking to Api's.
+
+After the setup of the Api and getting more information about classes, stateless classes and other React standards. I gained more interest in cleaning my calls and functions. So I got to Redux, that is a 'predictable state container' as their own description describes it. Why I would use this, is to make components less dependant on their parent components to pass their data. With the setup of Redux I could connect to the store from every component.
+
+Redux, React standards and Strapi were completely new to me, I had good understanding of framework behaviours like lifecycles and states that made it more easy to get a grip of the framework. It has been a good experience overall and i learned a lot. In the next chapter I write day by day what I have been doing the last two weeks and showing what my steps were.
 
 ## Overview process
 
@@ -68,12 +81,27 @@ The things I'm aiming for with this app are:
     ***
 
 -   Tuesday
+    -   On Tuesday I implemented Redux to write cleaner requests and make states application wide
+    -   Refactored answer and questions data to make a better filter
+    -   Started generating the form
     ***
 -   Wednesday
+    -   Tweaked a little bit of data for the form
+    -   Generated select options based on category
+    -   Made Redux stores for client handling
+    -   Tweaked styling of the form
     ***
 -   Thursday
+    -   Most of the day I was busy with data modelling and adjusting the form
+    -   Adjusted data in the Strapi API
+    -   Refactored select items to better component based
+    -   Setup the redux store for calculations
+    -   Started the calculation function based on redux store
     ***
 -   Friday
+    -   Finally fixed the calculation function
+    -   Styled the application a bit better
+    -   Finished presentation
 
 ---
 
@@ -85,9 +113,9 @@ Other technical aspects of the app include:
 -   React routing
 -   Store
 -   Scss
--   Reactive forms
 -   Dynamic number input
 -   Strapi CMS
+-   Redux
 
 ## Installation of the project
 
@@ -117,6 +145,9 @@ components/ - React components
 components/buttons - React button components
 components/form - React form components
 components/page - Page components
+store/ - All the redux store components
+store/action - All the functions that can be used in the app take place here. These can be called in components
+store/reducers - The handling of the action functions takes place here and passes the data into the desired store
 ```
 
 ## Licensing

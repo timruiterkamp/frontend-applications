@@ -39,20 +39,22 @@ const Select = props => {
 						onChange={saveChoices}
 						defaultValue={'-- select an option --'}
 					>
-						<option disabled> -- select an option -- </option>
+						{localStorage.getItem(props.options.categorie) ? (
+							<option>
+								{
+									JSON.parse(
+										localStorage.getItem(
+											props.options.categorie
+										)
+									).answer
+								}
+							</option>
+						) : (
+							<option disabled> -- select an option -- </option>
+						)}
+
 						{props.options.items.map((item, index) => (
 							<Fragment key={index}>
-								{localStorage.getItem(item.categorie) && (
-									<option key={item + index}>
-										{
-											JSON.parse(
-												localStorage.getItem(
-													item.categorie
-												)
-											).answer
-										}
-									</option>
-								)}
 								<option
 									key={index}
 									value={item.gewicht || item.Gewicht}

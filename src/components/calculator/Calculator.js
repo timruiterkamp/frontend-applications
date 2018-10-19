@@ -7,6 +7,8 @@ class Calculator extends Component {
 	}
 
 	render() {
+		// let getValuesOutOfLocalStorage = localStorage.getItem(props.options)
+		console.log(this.props)
 		let calculateValues = this.props.formData
 			.map(item => item.gewicht)
 			.reduce((a, b) => a + b, 0)
