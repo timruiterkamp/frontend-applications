@@ -5,7 +5,6 @@ import { Profile } from '../components/client/profile'
 import Form from '../components/form/Form'
 import Calculation from '../components/calculator/Calculator'
 
-let lastScrollY = 0
 class Client extends Component {
 	constructor(props) {
 		super(props)
