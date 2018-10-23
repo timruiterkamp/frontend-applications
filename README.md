@@ -1,4 +1,5 @@
-# Hulpverleners app voor Frontend-applications
+# App setup for social workers(By order of CMD Amsterdam Front-end Applications program)
+![Image of Homepage](https://github.com/timruiterkamp/frontend-applications/blob/master/homepage-ss.png)
 
 In this project I am trying to solve the problems Arjan de Jager is struggling with.  
 Arjan de Jager is currently busy with improving the system to prevent children being removed from their houses,  
@@ -18,6 +19,54 @@ The things I'm aiming for with this app are:
 -   Setting up mutiple cases and keep record of the progress
 -   Stimulate the speed of the process
 -   Keeping track of the case for social workers
+
+## Strapi for the content 🚀
+In this project I used strapi as the content management system to manage the data of the cases. It is important to get a storage place for al the data, so the social workers can view it from everywhere and data can be analysed and reviewed.
+
+Installation of strapi: 
+```bash
+npm install strapi@alpha -g
+strapi new my-project
+cd my-project
+strapi start
+```
+
+Setup of [Strapi](https://strapi.com):
+In this project the I used the following setup for questions and cases:
+>When recreating the strapi setup keep in mind the default strapi server starts at localhost:1337 and this default server is used in this project.
+
+In this project the following setup is being used:
+![Image of the strapi cases setup](https://github.com/timruiterkamp/frontend-applications/blob/master/cases-strapi.png)
+
+And for the questions and answers the following setup is being used:
+![Image of the strapi questions and answers setup](https://github.com/timruiterkamp/frontend-applications/blob/master/questions-strapi.png)
+
+For the questions and answers its **Important** to know that they are being matched by category and the setup has to be as following:
+```JSON
+"AnswerValues": [
+{
+"coefficients": "GESLACHT Mannen",
+"categorie": "Geslacht",
+"name": "Man",
+"gewicht": "-0,12611",
+"globalCategorie": "Algemeen"
+}
+]
+```
+```JSON
+"questions": [
+{
+"question": "Geslacht",
+"globalCategorie": "algemeen",
+"categorie": "geslacht"
+}
+]
+```
+
+The result when cases are being filled will be something like this:
+![Image of the Strapi setup](https://github.com/timruiterkamp/frontend-applications/blob/master/case-overview-strapi.png)
+
+
 
 ## Learning process
 
