@@ -16,7 +16,7 @@ class App extends Component {
 					<AddUser />
 					<Card type={'overview'}>
 						<h2>Bekijk alle cases</h2>
-						<Link to={'/clienten'}>Naar overzicht</Link>
+						<Link to={'/cases'}>Naar overzicht</Link>
 					</Card>
 				</section>
 

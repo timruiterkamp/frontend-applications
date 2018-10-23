@@ -30,7 +30,7 @@ const ClientOverview = props => {
 								) : (
 									''
 								)}
-								<Link to={`/clienten/${client.id}`}>
+								<Link to={`/cases/${client.id}`}>
 									Bekijk profiel
 								</Link>
 							</article>

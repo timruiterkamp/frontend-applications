@@ -28,8 +28,8 @@ export function getFormData() {
 		const data = await fetch('http://localhost:1337/questions')
 		const result = await data.json()
 		const filteredResult = await filterData(result)
-		dispatch(storeFormData(Object.values(filteredResult)))
-		return Object.values(filteredResult)
+		dispatch(storeFormData(filteredResult))
+		return filteredResult
 	}
 }
 

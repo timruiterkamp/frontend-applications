@@ -21,8 +21,8 @@ export default class RouterNav extends Component {
 		},
 		{
 			id: 2,
-			name: 'Clienten',
-			path: '/clienten',
+			name: 'Cases',
+			path: '/cases',
 			file: Clients,
 			show: true,
 			protected: false
@@ -45,8 +45,8 @@ export default class RouterNav extends Component {
 		},
 		{
 			id: 5,
-			name: 'Client',
-			path: '/clienten/:id',
+			name: 'Case',
+			path: '/cases/:id',
 			file: Client,
 			show: false,
 			protected: false

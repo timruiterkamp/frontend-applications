@@ -11,7 +11,7 @@ function storeClientData(data) {
 // Actions
 export function getClients() {
 	return async dispatch => {
-		const data = await fetch(`http://localhost:1337/clients/`)
+		const data = await fetch(`http://localhost:1337/cases/`)
 		const result = await data.json()
 		dispatch(storeClientData(result))
 	}
@@ -19,7 +19,7 @@ export function getClients() {
 
 export function getSingleClientByID(id) {
 	return async () => {
-		const data = await fetch(`http://localhost:1337/clients/${id}`)
+		const data = await fetch(`http://localhost:1337/cases/${id}`)
 		const result = await data.json()
 		return result
 	}
